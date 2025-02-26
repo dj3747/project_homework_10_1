@@ -28,6 +28,3 @@ list_of_dictionaries = [
 filtered_list = filter_by_state(list_of_dictionaries, state="EXECUTED")
 
 sorted_list = sort_by_date(list_of_dictionaries, reverse=True)
-
-print(filtered_list)
-print(sorted_list)
