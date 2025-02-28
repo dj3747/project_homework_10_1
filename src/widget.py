@@ -17,8 +17,7 @@ def mask_account_card(user_string: str) -> str:
 
 def get_date(international_date: str) -> str:
     """Функция принимает дату в международном формате, возвращает в обычном"""
-
     international_date_split = international_date.split("T")
     new_date = international_date_split[0].split("-")
     normal_date = ".".join(new_date[::-1])
-    return f'"{normal_date}"'
+    return f"{normal_date}"
