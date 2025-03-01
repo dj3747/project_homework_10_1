@@ -3,31 +3,19 @@ import pytest
 
 @pytest.fixture
 def card_num():
-    return "7000 79** ****6361"
+    return "7000 79** **** 6361"
 
 @pytest.fixture
 def account_num():
-    return "**4305"
+    return "** 4305"
 
 @pytest.fixture
-def name_number_card_1():
-    return "Visa Platinum 7000 79** ****6361"
-
-
-@pytest.fixture
-def name_number_card_2():
-    return "Maestro 7000 79** ****6361"
-
-
-@pytest.fixture
-def name_account():
-    return "Счет **4305"
+def name_number_card():
+    return "Visa Platinum 7000 79** **** 6361"
 
 @pytest.fixture
 def inter_format():
     return "11.03.2024"
-
-
 
 @pytest.fixture
 def not_16_digits():

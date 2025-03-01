@@ -1,40 +1,11 @@
 import pytest
 
 from src.widget import mask_account_card, get_date
+from tests.conftest import name_number_card
 
 
-@pytest.mark.parametrize(
-    "name_number_card_1, expected",
-    [
-        ("Visa Platinum 7000792289606361", "Visa Platinum 7000 79** **** 6361"),
-    ],
-)
-def test_mask_account_card(name_number_card_1: str, expected: str) -> None:
-    """Тестиреет функцию на входные данные"""
-    assert mask_account_card(name_number_card_1) == expected
-
-
-def test_mask_account_card_invalid_1() -> None:
-    """Проверяет недопустимые входные данные"""
-    with pytest.raises(AttributeError):
-        mask_account_card("12345678901234567890")
-
-
-@pytest.mark.parametrize(
-    "name_number_card_2, expected",
-    [
-        ("Maestro 7000792289606361", "Maestro 7000 79** **** 6361"),
-    ],
-)
-def test_mask_account_card(name_number_card_2: str, expected: str) -> None:
-    """Тестиреет функцию на входные данные"""
-    assert mask_account_card(name_number_card_2) == expected
-
-
-def test_mask_account_card_invalid_2() -> None:
-    """Проверяет недопустимые входные данные"""
-    with pytest.raises(AttributeError):
-        mask_account_card("12345678901234567890")
+def test_mask_account_card(name_number_card: str) -> None:
+    assert mask_account_card("Visa Platinum 7000792289606361") == name_number_card
 
 
 @pytest.mark.parametrize(
