@@ -1,6 +1,6 @@
 import pytest
 
-from src.processing import filter_by_state, sort_by_date, list_of_dictionaries, sorted_list
+from src.processing import filter_by_state, sort_by_date
 
 
 @pytest.mark.parametrize(
@@ -34,11 +34,6 @@ def test_filter_by_state(transactions: list[dict], state: str, expected: list[di
         )
     ],
 )
-
 def test_sort_by_date(transactions: list[dict], reverse: bool, expected: list[dict]) -> None:
     """Тестиреет функцию на входные данные"""
     assert sort_by_date(transactions, reverse) == expected
-
-
-
-

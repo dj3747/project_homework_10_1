@@ -5,25 +5,31 @@ import pytest
 def card_num():
     return "7000 79** **** 6361"
 
+
 @pytest.fixture
 def account_num():
     return "** 4305"
+
 
 @pytest.fixture
 def name_number_card():
     return "Visa Platinum 7000 79** **** 6361"
 
+
 @pytest.fixture
 def inter_format():
     return "11.03.2024"
+
 
 @pytest.fixture
 def not_16_digits():
     return "Номер должен содержать 16 цифр"
 
+
 @pytest.fixture
 def not_20_digits():
     return "Номер должен содержать 20 цифр"
+
 
 @pytest.fixture
 def transactions():

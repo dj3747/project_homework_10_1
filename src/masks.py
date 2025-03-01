@@ -10,7 +10,7 @@ def get_mask_card_number(card_number: str) -> str:
 def get_mask_account(account_number: str) -> str:
     """Функция принимает на вход номер счёта и возвращает его маску"""
     if len(account_number) != 20:
-        return  "Номер должен содержать 20 цифр"
+        return "Номер должен содержать 20 цифр"
 
     masked_number_account = f"**{account_number[-4:]}"
     return masked_number_account
