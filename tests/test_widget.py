@@ -3,8 +3,15 @@ import pytest
 from src.widget import get_date, mask_account_card
 
 
-def test_mask_account_card(name_number_card: str) -> None:
-    assert mask_account_card("Visa Platinum 7000792289606361") == name_number_card
+@pytest.mark.parametrize(
+    "card_number, expected_masked",
+    [
+        ("Visa Platinum 7000792289606361", "Visa Platinum 7000 79** **** 6361"),
+        ("Maestro 7000792289606361", "Maestro 7000 79** **** 6361"),
+    ],
+)
+def test_mask_account_card(card_number: str, expected_masked: str) -> None:
+    assert mask_account_card(card_number) == expected_masked
 
 
 @pytest.mark.parametrize(
