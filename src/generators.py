@@ -76,7 +76,7 @@ def card_number_generator(start, stop):
     for card_list in range(start, stop + 1):
         if 0 <= card_list <= 9999999999999999:
             card_num = f"{card_list:016}"
-            format_card_num = " ".join([card_num[i:i+4] for i in range(0, 16, 4)])
+            format_card_num = " ".join([card_num[i : i + 4] for i in range(0, 16, 4)])
             yield format_card_num
 
 
