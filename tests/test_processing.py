@@ -15,9 +15,9 @@ from src.processing import filter_by_state, sort_by_date
         )
     ],
 )
-def test_filter_by_state(transactions: list[dict], state: str, expected: list[dict]) -> None:
-    """Тестиреет функцию на входные данные"""
-    assert filter_by_state(transactions, state) == expected
+def test_filter_by_state(transact: list[dict], state: str, expected: list[dict]) -> None:
+    """Тестирует функцию на входные данные"""
+    assert filter_by_state(transact, state) == expected
 
 
 @pytest.mark.parametrize(
@@ -34,6 +34,6 @@ def test_filter_by_state(transactions: list[dict], state: str, expected: list[di
         )
     ],
 )
-def test_sort_by_date(transactions: list[dict], reverse: bool, expected: list[dict]) -> None:
-    """Тестиреет функцию на входные данные"""
-    assert sort_by_date(transactions, reverse) == expected
+def test_sort_by_date(transact: list[dict], reverse: bool, expected: list[dict]) -> None:
+    """Тестирует функцию на входные данные"""
+    assert sort_by_date(transact, reverse) == expected

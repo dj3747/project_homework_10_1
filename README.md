@@ -13,6 +13,7 @@ widget_bank
 1. `masks`
 2. `widget`
 3. `processing`
+4. `generators`
 
 ## Проверка кода
 В проекте выполнены проверки линтерами:
@@ -27,6 +28,8 @@ widget_bank
 - `masks`: функции `get_mask_card_number` и `get_mask_account`
 - `widget`: функции `mask_account_card` и `get_date`
 - `processing`: функции `filter_by_state` и `sort_by_date`
+- `generators`: функцию `filter_by_currency`,
+   функцию-генератор `transaction_descriptions`, генератор `card_number_generator` `
 
 Покрытие тестами составляет не менее 80% кода проекта.
 ## Лицензия:
