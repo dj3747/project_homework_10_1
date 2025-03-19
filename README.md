@@ -6,7 +6,11 @@ widget_bank
 
 ## Установка:
 1. Клонируйте репозиторий: git clone https://github.com/dj3747/project_homework_10_1
-2. Стандартная библиотека Python.
+2. Активировать интерпретатор `Poetry` в проекте командой `poetry init`
+3. Стандартная библиотека Python.
+4. С помощью шаблона `.env.example` создать файл `.env` для хранения чувствительных
+   данных(ключи API, пароли и т.п.) и обязательно добавить его в список исключений
+   `.gitignore`.
 
 ## Структура проекта
 Проект состоит из следующих модулей:
@@ -15,6 +19,8 @@ widget_bank
 3. `processing`
 4. `generators`
 5. `decorators`
+6. `utils`
+7. `external_api.py`
 
 ## Проверка кода
 В проекте выполнены проверки линтерами:
@@ -32,6 +38,8 @@ widget_bank
 - `generators`: функцию `filter_by_currency`,
    функцию-генератор `transaction_descriptions`, генератор `card_number_generator` 
 - `decorators`: проверяем функциональность декоратора
+- `utils`: функцию `get_financial_transactions`
+- `external_api`: функцию `currency_conversion`
 
 Покрытие тестами составляет не менее 80% кода проекта.
 ## Лицензия:

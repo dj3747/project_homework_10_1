@@ -3,6 +3,8 @@ import os
 
 
 def get_financial_transactions(path):
+    """Принимает путь до JSON файла и возвращает список словарей
+    с данными о финансовых транзакциях"""
     if not os.path.exists(path):
         return []
     with open(path, encoding="utf-8") as file_json:
