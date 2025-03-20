@@ -1,16 +1,16 @@
 import json
-import os
 import logging
-
+import os
 
 logger = logging.getLogger("utils")
 file_handler = logging.FileHandler(
-    'C:/Users/Serg/PycharmProjects/project_homework_10_1/logs/utils.log',
-    'w', encoding='utf-8')
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+    "C:/Users/Serg/PycharmProjects/project_homework_10_1/logs/utils.log", "w", encoding="utf-8"
+)
+formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 logger.setLevel(logging.DEBUG)
+
 
 def get_financial_transactions(path):
     """Принимает путь до JSON файла и возвращает список словарей
