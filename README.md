@@ -8,19 +8,23 @@ widget_bank
 1. Клонируйте репозиторий: git clone https://github.com/dj3747/project_homework_10_1
 2. Активировать интерпретатор `Poetry` в проекте командой `poetry init`
 3. Стандартная библиотека Python.
-4. С помощью шаблона `.env.example` создать файл `.env` для хранения чувствительных
+4. Установите библиотеку `python-dotenv`
+5. С помощью шаблона `.env.example` создать файл `.env` для хранения чувствительных
    данных(ключи API, пароли и т.п.) и обязательно добавить его в список исключений
-   `.gitignore`.
+   `.gitignore`. 
+6. Установите библиотеку `requests`
+7. Установите библиотеку `pandas` и `openpyxl`
 
 ## Структура проекта
 Проект состоит из следующих модулей:
-1. `masks`
-2. `widget`
-3. `processing`
-4. `generators`
-5. `decorators`
-6. `utils`
+1. `masks.py`
+2. `widget.py`
+3. `processing.py`
+4. `generators.py`
+5. `decorators.py`
+6. `utils.py`
 7. `external_api.py`
+8. `file_reader.py`
 
 ## Проверка кода
 В проекте выполнены проверки линтерами:
@@ -40,6 +44,7 @@ widget_bank
 - `decorators`: проверяем функциональность декоратора
 - `utils`: функцию `get_financial_transactions`
 - `external_api`: функцию `currency_conversion`
+- `file_reader`: функции `read_csv` и `read_exel`
 
 ## Логирование
 Модули `masks` и `utils` имеют логирование в отдельные `.log` файлы в формате 
