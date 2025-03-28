@@ -179,6 +179,12 @@ def main():
                     f"{to_account if to_account else 'Получатель не указан'}\n"
                     f"Сумма: {amount} {currency}.\n"
                 )
+
+        print("\nСтатистика по категориям операций:")
+        category_stats = count_transactions_by_category(finaly_filter)
+        for category, count in category_stats.items():
+            print(f"• {category}: {count} операций")
+
     else:
         print("Не найдено ни одной транзакции, подходящей под ваши условия фильтрации")
 
