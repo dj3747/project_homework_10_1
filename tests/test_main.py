@@ -1,6 +1,6 @@
-from unittest.mock import patch, mock_open
+from unittest.mock import mock_open, patch
 
-from main import get_amount, filter_by_state, read_file_json
+from main import filter_by_state, get_amount, read_file_json
 
 
 # Тест для функции read_file_json

@@ -3,12 +3,10 @@ import os
 import re
 from collections import Counter
 
-import pandas as pd
 from pandas import read_excel
 
 from src.file_reader import read_csv
-from src.masks import get_mask_account, get_mask_card_number
-from src.processing import filter_by_state, filtered_list, sort_by_date, sorted_list
+from src.processing import filter_by_state
 from src.widget import get_date, mask_account_card
 
 
@@ -41,6 +39,7 @@ def filter_by_currency(transactions, currency_code):
         if currency_json.upper() == target_currency or currency_csv == target_currency:
             filtered.append(transaction)
     return filtered
+
 
 def get_currency(transaction):
     """Возвращает код валюты для JSON/CSV/XLSX данных"""
@@ -86,7 +85,7 @@ def main():
         elif work_file == "3":
             print("Для обработки выбран XLSX-файл")
             df = read_excel(os.path.join(os.path.dirname(__file__), "data/transactions_excel.xlsx"))
-            read_file = df.to_dict('records')
+            read_file = df.to_dict("records")
             break
         else:
             work_file = input("Данного варианта нет в списке, попробуйте ещё раз:\nВаш выбор:").strip()
@@ -114,8 +113,6 @@ def main():
                 .strip()
                 .upper()
             )
-    # print(f"Транзакций после фильтрации по статусу EXECUTED: {len(status_operation_filter)}")
-    # print("Пример транзакции:", status_operation_filter[0] if status_operation_filter else "Нет данных")
 
     while True:
         question_sort_data = input("Отсортировать операции по дате? Да/Нет \nВаш выбор: ").lower()

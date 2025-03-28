@@ -1,5 +1,7 @@
 from unittest.mock import patch
 
+from src.file_reader import read_csv, read_exel
+
 
 @patch("src.file_reader.read_csv")
 def test_read_csv(mock_read_csv):
@@ -31,6 +33,10 @@ def test_read_csv(mock_read_csv):
     }
 
     assert result == expected_result
+
+
+def test_read_csv_non_existing_file():
+    assert read_csv("non_existent.csv") == []
 
 
 if __name__ == "__main__":
@@ -67,6 +73,10 @@ def test_read_exel(mock_read_exel):
     }
 
     assert result == expected_result
+
+
+def test_read_excel_non_existing_file():
+    assert read_exel("non_existent.xlsx") == []
 
 
 if __name__ == "__main__":

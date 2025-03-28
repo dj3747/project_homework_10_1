@@ -20,7 +20,7 @@ def read_csv(file_path):
         return df.to_dict("records")
     except Exception as e:
         print(f"Error reading CSV file: {e}")
-        return None
+        return []
 
 
 transaction = read_csv("C:/Users/Serg/PycharmProjects/project_homework_10_1/data/transactions.csv")
