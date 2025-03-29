@@ -1,13 +1,18 @@
 from datetime import datetime
 
 
-def filter_by_state(banking_transaction: list[dict], state: str = "EXECUTED") -> list[dict]:
+def filter_by_state(transactions: list[dict], state: str = "EXECUTED") -> list[dict]:
     """Функция возврата банковских операций по ключу"""
-    state_banking_transaction = []
-    for i in banking_transaction:
-        if i["state"] == state:
-            state_banking_transaction.append(i)
-    return state_banking_transaction
+    if not transactions:
+        return []  # Return an empty list if the input is empty
+
+    filtered_transactions = []
+
+    for dat, stat in enumerate(transactions):
+        if stat.get('state') == state:  # основное условия создание нового списка
+            filtered_transactions.append(stat)
+
+    return filtered_transactions
 
 
 def sort_by_date(banking_transaction: list[dict], reverse: bool = True) -> list[dict]:
